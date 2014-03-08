@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 _s
 ===
 
@@ -41,3 +42,9 @@ Then, update the stylesheet header in style.css and the links in footer.php with
 Now you're ready to go! The next step is easy to say, but harder to do: make an awesome WordPress theme. :)
 
 Good luck!
+=======
+underscores-bootstrap
+=====================
+
+A starter theme for WordPress using Underscores and Bootstrap 3
+>>>>>>> 5a99117e636b442726bd3f7bf242ada459614796
