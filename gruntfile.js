@@ -80,6 +80,13 @@ module.exports = function (grunt) {
             }
         },
         watch: {
+            js: {
+                files: ['js/extra.js'],
+                tasks: ['concat', 'uglify'],
+                options: {
+                    livereload: true   
+                }
+            },
             php: {
                 files: ['*.php', 'inc/*.php'],
                 options: {

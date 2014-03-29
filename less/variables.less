@@ -2,6 +2,7 @@
 // Custom Variables (A copy of the original variables)
 // --------------------------------------------------
 
+@offcanvas-nav-width: 300px;
 
 //== Colors
 //
@@ -19,6 +20,12 @@
 @brand-warning:         #f0ad4e;
 @brand-danger:          #d9534f;
 
+// Split Complementary
+@brand-primary: rgba(107,33,33,1);
+@distance2: 80; // Degrees between the two complementary colors
+@splitComp1: spin(@brand-primary, ((360 - @distance2) / 2));//green
+@splitComp2: @brand-primary; //red
+@splitComp3: spin(@brand-primary, (((360 - @distance2) / 2) * -1)); //blue
 
 //== Scaffolding
 //
@@ -30,7 +37,7 @@
 @text-color:            @gray-dark;
 
 //** Global textual link color.
-@link-color:            @brand-primary;
+@link-color:            @splitComp1;
 //** Link hover color set via `darken()` function.
 @link-hover-color:      darken(@link-color, 15%);
 
@@ -334,7 +341,7 @@
 @navbar-collapse-max-height:       340px;
 
 @navbar-default-color:             #777;
-@navbar-default-bg:                #f8f8f8;
+@navbar-default-bg:                darken(@splitComp1,5%);
 @navbar-default-border:            darken(@navbar-default-bg, 6.5%);
 
 // Navbar links
@@ -743,11 +750,11 @@
 //== Breadcrumbs
 //
 //##
-
+@breadcrumb-font-size:			.875em;
 @breadcrumb-padding-vertical:   8px;
 @breadcrumb-padding-horizontal: 15px;
 //** Breadcrumb background color
-@breadcrumb-bg:                 #f5f5f5;
+@breadcrumb-bg:                 @gray-lighter;
 //** Breadcrumb text color
 @breadcrumb-color:              #ccc;
 //** Text color of current page in the breadcrumb

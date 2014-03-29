@@ -2744,6 +2744,18 @@
     return o.noConflict = function(b) {
         return a.$ === o && (a.$ = Mc), b && a.jQuery === o && (a.jQuery = Lc), o;
     }, typeof b === U && (a.jQuery = a.$ = o), o;
+}), $(document).ready(function() {
+    $(".entry-content").each(function() {
+        $(this).children("p").first().addClass("first-paragraph");
+    }), $("[data-toggle=offcanvas]").click(function(e) {
+        e.preventDefault();
+        var globololol = $("#global");
+        globololol.toggleClass("active"), globololol.hasClass("active") ? $(".menu-icon").animate({
+            left: "17em"
+        }, 200) : $(".menu-icon").animate({
+            left: "1em"
+        }, 200);
+    });
 }), +function($) {
     "use strict";
     function transitionEnd() {
