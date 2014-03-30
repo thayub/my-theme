@@ -14,22 +14,30 @@
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-<!--<link href='http://fonts.googleapis.com/css?family=Podkova:400,700|Open+Sans:300italic,600italic,400' rel='stylesheet' type='text/css'>-->
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Oxygen:700|Raleway:500' rel='stylesheet' type='text/css'>
 <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
-
-<nav id="global-navigation" class="" role="navigation">	  
+<nav id="site-navigation" class="navbar navbar-default navbar-static-top" role="navigation">
+	<div class="container">  
+		
+	  <div class="navbar-header">
+	    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar-collapse">
+	      <span class="sr-only">Toggle navigation</span>
+	      <span class="icon-bar"></span>
+	      <span class="icon-bar"></span>
+	      <span class="icon-bar"></span>
+	    </button>
+	    <strong><a class="navbar-brand" href="<?php echo get_site_url();?>"><?php bloginfo( 'name' ); ?></a></strong>
+	  </div>
 	<!--<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', '_s' ); ?></a>-->
-	<?php 
-	/* Top level navigation */
-	wp_nav_menu( array( 
-		'theme_location' 		=> 'primary',
+	<?php wp_nav_menu( array( 
+		//'theme_location' 	=> 'primary',
 		'container' 				=> 'div',
-		'container_class' 	=> '',
-		'container_id'    	=> 'global',
-		'menu_class'      	=> '',
+		'container_class' 	=> 'collapse navbar-collapse',
+		'container_id'    	=> 'main-navbar-collapse',
+		'menu_class'      	=> 'nav navbar-nav navbar-right',
 		'menu_id'         	=> '',
 		'echo'            	=> true,
 		'fallback_cb'     	=> 'wp_page_menu',
@@ -40,15 +48,28 @@
 		'items_wrap'      	=> '<ul id="%1$s" class="%2$s">%3$s</ul>',
 		'depth'           	=> 0,
 		'walker'          	=> ''
-	 ) ); 
-	
-	 ?>
-	
+	 ) ); ?>
+	  
+	</div>
 </nav><!-- #site-navigation -->
+
+	<?php 
+	if (is_single()) {
+
+?>
+
+<div class="container" style="margin-bottom: 1em;">
+
+<h1 style="text-align:center;"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+
+</div>
+<?php
+
+	} else {
+
+
+?>
 	<header id="masthead" class="site-header" role="banner">
-		<div class="menu-icon" data-toggle="offcanvas" style="cursor: pointer;">
-	    <a href="#footer"><i class="fa fa-bars"></i> <span>menu</span></a>
-	  </div>
 			<?php
 			if ( is_category() ) {
 				?>
@@ -71,7 +92,8 @@
 			} else {
 		?>
 		<div class="site-branding">
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<h1 class="site-title">Welcome</h1>
+
 		</div>
 			<?php }
 			?>
@@ -117,17 +139,6 @@
 
 
 	</header><!-- #masthead -->
-<div class="container-fluid breadcrumbs-container">
-	<div class="row">
-		<div class="col-sm-2">
-		
-		</div>
-		<div class="col-sm-10" style="text-align: right;">
-			<nav class="bb_breadcrumbs">
-				<?php basic_bootstrap_breadcrumbs(); ?>
-			</nav>
-		</div>
-	</div>
-</div>
+<?php } ?>
 <div id="page" class="container">
 	<div id="content" class="site-content">
