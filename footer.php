@@ -9,15 +9,48 @@
 ?>
 
 	</div><!-- #content -->
-
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'basic-bootstrap' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'basic-bootstrap' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', 'basic-bootstrap' ), 'Basic Bootstrap', '<a href="http://underscores.me/" rel="designer">Underscores.me</a>' ); ?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
 </div><!-- #page -->
+<section class="footer">
+	<div class="container">
+	<footer id="colophon" class="row" role="contentinfo">
+		<div class="col-sm-4">
+			<?php if ( ! dynamic_sidebar( 'footer left' ) ) : ?>
+
+		    <aside id="categories" class="widget"><h4>Categories</h4>
+				<ul>
+				<?php wp_list_categories( 'title_li=' ); ?>
+				</ul>
+		    </aside>
+
+			<?php endif; ?>
+		</div>
+
+		<div class="col-sm-4">
+			<?php if ( ! dynamic_sidebar( 'footer center' ) ) : ?>
+
+		    <aside id="categories" class="widget"><h4>Categories</h4>
+				<ul>
+				<?php wp_list_categories( 'title_li=' ); ?>
+				</ul>
+		    </aside>
+
+			<?php endif; ?>
+		</div>
+
+		<div class="col-sm-4">
+			<?php if ( ! dynamic_sidebar( 'footer right' ) ) : ?>
+
+		    <aside id="categories" class="widget"><h4>Categories</h4>
+				<ul>
+				<?php wp_list_categories( 'title_li=' ); ?>
+				</ul>
+		    </aside>
+
+			<?php endif; ?>
+		</div>
+	</footer><!-- #colophon -->
+	</div>
+</section>
 
 <?php wp_footer(); ?>
 

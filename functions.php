@@ -94,6 +94,37 @@ function basic_bootstrap_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'basic_bootstrap_scripts' );
 
+function footer_widgets_init() {
+
+	register_sidebar( array(
+		'name' => 'Footer left',
+		'class' => 'footer-widget-left',
+		'before_widget' => '<div>',
+		'after_widget' => '</div>',
+		'before_title' => '<h2>',
+		'after_title' => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name' => 'Footer center',
+		'class' => 'footer-widget-center',
+		'before_widget' => '<div>',
+		'after_widget' => '</div>',
+		'before_title' => '<h2>',
+		'after_title' => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name' => 'Footer right',
+		'class' => 'footer-widget-right',
+		'before_widget' => '<div>',
+		'after_widget' => '</div>',
+		'before_title' => '<h2>',
+		'after_title' => '</h2>',
+	) );
+}
+add_action( 'widgets_init', 'footer_widgets_init' );
+
 /**
  * Implement the Custom Header feature.
  */

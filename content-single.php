@@ -6,13 +6,16 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
+		<div class="entry-header-content">
 		<h1 class="entry-title"><?php the_title(); ?></h1>
 
 		<div class="entry-meta">
 			<?php basic_bootstrap_posted_on(); ?>
 		</div><!-- .entry-meta -->
+		</div>
 	</header><!-- .entry-header -->
-
+	
+	<div class="content">
 	<div class="entry-content">
 		<?php the_content(); ?>
 		<?php
@@ -22,8 +25,10 @@
 			) );
 		?>
 	</div><!-- .entry-content -->
+	</div><!-- .content -->
 
 	<footer class="entry-meta">
+		<div class="col-sm-offset-2 col-sm-8">
 		<?php
 			/* translators: used between list items, there is a space after the comma */
 			$category_list = get_the_category_list( __( ', ', 'basic-bootstrap' ) );
@@ -58,5 +63,6 @@
 		?>
 
 		<?php edit_post_link( __( 'Edit', 'basic-bootstrap' ), '<span class="edit-link">', '</span>' ); ?>
+		</div>
 	</footer><!-- .entry-meta -->
 </article><!-- #post-## -->

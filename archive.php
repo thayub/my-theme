@@ -15,12 +15,10 @@ get_header(); ?>
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
+				<div class="page-header-inner">
 				<h1 class="page-title">
 					<?php
-						if ( is_category() ) :
-							single_cat_title();
-
-						elseif ( is_tag() ) :
+						if ( is_tag() ) :
 							single_tag_title();
 
 						elseif ( is_author() ) :
@@ -62,19 +60,10 @@ get_header(); ?>
 						elseif ( is_tax( 'post_format', 'post-format-chat' ) ) :
 							_e( 'Chats', 'basic-bootstrap' );
 
-						else :
-							_e( 'Archives', 'basic-bootstrap' );
-
 						endif;
 					?>
 				</h1>
-				<?php
-					// Show an optional term description.
-					$term_description = term_description();
-					if ( ! empty( $term_description ) ) :
-						printf( '<div class="taxonomy-description">%s</div>', $term_description );
-					endif;
-				?>
+				</div>
 			</header><!-- .page-header -->
 
 			<?php /* Start the Loop */ ?>
