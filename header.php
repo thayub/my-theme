@@ -53,26 +53,11 @@
 	</div>
 </nav><!-- #site-navigation -->
 
-	<?php 
-	if (is_single()) {
-
-?>
-
-<div class="container" style="margin-bottom: 1em;">
-
-<h1 style="text-align:center;"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
-
-</div>
-<?php
-
-	} else {
 
 
-?>
-	<header id="masthead" class="site-header" role="banner">
-			<?php
-			if ( is_category() ) {
-				?>
+
+	<header id="masthead" class="site-header container" role="banner">
+
 				<div class="site-branding">
 				<h1 class="site-title">
 				<?php
@@ -88,57 +73,10 @@
 					?>
 				</p>
 				</div>
-				<?php
-			} else {
-		?>
-		<div class="site-branding">
-			<h1 class="site-title">Welcome</h1>
-
-		</div>
-			<?php }
-			?>
-
-		
-
-
-<?php
-	/*
-	if (is_category()) {
-		$current_cat = get_query_var('cat');
-		$args = array(
-			'type'                     => 'post',
-			'child_of'                 => $current_cat,
-			'parent'                   => '',
-			'orderby'                  => 'name',
-			'order'                    => 'ASC',
-			'hide_empty'               => 1,
-			'hierarchical'             => 1,
-			'exclude'                  => '',
-			'include'                  => '',
-			'number'                   => '',
-			'taxonomy'                 => 'category',
-			'pad_counts'               => false 
-
-		); 
-
-		$categories = get_categories( $args );
-		echo '<ul class="sub-categories nav nav-pills nav-justified">';
-		foreach ($categories as $category) {
-			echo '<li> <a href="' . get_category_link( $category->id ) . $category->slug
-														.'">' . $category->name . '</a></li>';
-		}
-		echo "</ul>";
-	} else {
-		echo "";
-	}
-	// echo "<pre>";
-	// print_r($categories);
-	// echo "</pre>";
-	*/
-	?>
-
+	
+	
 
 	</header><!-- #masthead -->
-<?php } ?>
+
 <div id="page" class="container">
 	<div id="content" class="site-content">

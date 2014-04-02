@@ -4,7 +4,10 @@
 @fa-font-path:   "../bower_components/font-awesome/fonts";
 
 body {
-    
+/*    background: url('../img/default-bg.jpg') no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-size: 100%; */
 }
 article { margin-bottom: 2.22em; }
 a {
@@ -14,17 +17,6 @@ a {
         transition: all .25s;
         text-decoration:none;
         border-bottom: 1px solid black;
-    }
-}
-
-.header {
-    position: relative;
-    height:0;
-    background: lighten(@splitComp3,55%);
-    &> .row {
-        width: 100%;
-        position: absolute;
-        bottom: 0;
     }
 }
 
@@ -125,12 +117,10 @@ img {
         border-radius: 0 .5em .5em 0;    
     }
 }
+#page { background: white; }
 #masthead {
     position: relative;
-    background-image: url('../img/default-bg.jpg');
-    background-size: cover;
-    background-size: 100%;
-    background-attachment: fixed;
+    .bg-transparent(#000, .5);
     height: 20em;
     .sub-categories {
         font-size: .875em;
@@ -215,10 +205,22 @@ article {
 }
 
 #site-navigation {
-    .bg-transparent(darken(@navbar-default-bg, 10%), .8);
+    background: @navbar-default-bg;
     margin-bottom: 0;
     text-shadow: 1px 1px 1px @gray;
-    a { border-bottom: none; }
+    a { 
+        border-bottom: none; 
+        &:hover {
+            background: lighten(@navbar-default-bg, 5%);
+        }
+    }
+    .nav {
+        font-size: .875em;
+        text-transform: uppercase;
+        a {
+            color: rgb(229,234,173);
+        }
+    }
 }
 
 header {

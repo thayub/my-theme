@@ -7,7 +7,7 @@
 
 get_header(); ?>
 
-<div id="primary" class="container">
+<div id="primary" class="">
   <main id="main" class="row" role="main"> 
     <div class="col-xs-12 col-sm-4">
     <h3>Code</h3>
